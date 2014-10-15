@@ -2,10 +2,14 @@ Given(/^estoy en la pagina principal$/) do
   visit '/'
 end
 
-When(/^ingreso "(.*?)" en el campo "(.*?)"$/) do |arg1, arg2|
-  pending # express the regexp above with the code you wish you had
+When(/^ingreso "(.*?)" en el campo "(.*?)"$/) do |valor, campo|
+  fill_in(campo, :with => valor)
 end
 
-Then(/^deberia ver "(.*?)"$/) do |arg1|
-  pending # express the regexp above with the code you wish you had
+When(/^presiono el boton "(.*?)"$/) do |nombre_boton|
+  click_button(nombre_boton)
+end
+
+Then(/^deberia ver "(.*?)"$/) do |mensaje|
+  pending
 end
