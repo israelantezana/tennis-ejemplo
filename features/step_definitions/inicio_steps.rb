@@ -11,5 +11,5 @@ When(/^presiono el boton "(.*?)"$/) do |nombre_boton|
 end
 
 Then(/^deberia ver "(.*?)"$/) do |mensaje|
-  pending
+  last_response.body.should =~ /#{mensaje}/m
 end
