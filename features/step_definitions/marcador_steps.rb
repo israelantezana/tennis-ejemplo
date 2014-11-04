@@ -11,3 +11,7 @@ Then(/^deberia ver marcador "(.*?)" para Jugador(\d+)$/) do |marcador, nroJugado
                                 :class => "marcadorJugador#{nroJugador}",
                                 :content => marcador)
 end
+
+When(/^jugador(\d+) anota$/) do |nroJugador|
+  click_button("btnJugador#{nroJugador}")
+end
