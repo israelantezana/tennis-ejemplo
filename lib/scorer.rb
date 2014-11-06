@@ -1,5 +1,7 @@
 class Scorer
   def initialize
+    @puntajes = { 0 => '0', 1 => '15', 2 => '30', 3 => '40', 
+                  4 => 'Advantage', 5 => 'Ganador'}
     @puntaje1 = 0
     @puntaje2 = 0
   end
@@ -14,12 +16,12 @@ class Scorer
   
   def anota_jugador(nro_jugador)
     if (nro_jugador == 1)
-      @puntaje1 = incrementar_marcador(@puntaje1)
+      @puntaje1 += 1
     else
-      @puntaje2 = incrementar_marcador(@puntaje2)
+      @puntaje2 += 1
     end
   end
-  
+
   def mostrar_marcador(puntaje_a_mostrar, puntaje_adversario)
     if deuce?(puntaje_a_mostrar, puntaje_adversario)
       "Deuce"
@@ -27,24 +29,16 @@ class Scorer
       if advantage?(puntaje_a_mostrar, puntaje_adversario)
         "Advantage"  
       else
-        puntaje_a_mostrar.to_s
+        @puntajes[puntaje_a_mostrar]
       end
     end
   end
-  
+
   def deuce?(puntaje_a_mostrar, puntaje_adversario)
-    puntaje_a_mostrar == 40 && puntaje_adversario == 40
+    puntaje_a_mostrar == 3 && puntaje_adversario == 3
   end
   
   def advantage?(puntaje_actual, puntaje_adversario)
-    puntaje_actual == 55 && puntaje_adversario == 40
-  end
-  
-  def incrementar_marcador(puntaje_actual)
-    if (puntaje_actual == 30)
-      puntaje = 40
-    else
-      puntaje = puntaje_actual + 15
-    end
+    puntaje_actual == 4 && puntaje_adversario == 3
   end
 end
