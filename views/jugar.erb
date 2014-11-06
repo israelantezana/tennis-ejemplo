@@ -1,6 +1,6 @@
 <h1>Partida</h1>
 <%= @jugador1%> vs <%= @jugador2%>
-<form id="EnJuego" action="/anotar1" method="post">
+<form id="jugador1" action="/anotar1" method="post">
 	<div class="tablero">
 		<div class="marcadorJugador1"><%= @puntaje1 %></div>
 		<div class="botonJugador1">
@@ -9,7 +9,7 @@
 	</div>
 </form>
 
-<form id="EnJuego" action="/anotar2" method="post">
+<form id="jugador2" action="/anotar2" method="post">
 	<div class="tablero">
 		<div class="marcadorJugador2"><%= @puntaje2 %></div>
 		<div class="botonJugador2">
@@ -17,6 +17,13 @@
 		</div>
 	</div>
 </form>
+
+
+<form id="ReIniciar" action="/" method="get">
+	<input id="btnReinicia" type="submit" value="Volver a Empezar">
+</form>
+
+
 
 
 
