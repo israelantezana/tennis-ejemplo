@@ -3,7 +3,7 @@ When(/^ingreso a la pagina principal$/) do
 end
 
 Then(/^deberia ver el mensaje "(.*?)"$/) do |mensaje|
-  last_response.body.should =~ /#{mensaje}/m
+  expect(last_response.body).to match(/#{mensaje}/m)
 end
 
 Then(/^deberia ver la imagen "(.*?)"$/) do |imagen|

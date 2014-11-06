@@ -6,8 +6,8 @@ Given(/^inicio partida con dos jugadores$/) do
 end
 
 Then(/^deberia ver marcador "(.*?)" para Jugador(\d+)$/) do |marcador, nroJugador|
-  last_response.body.should =~ /class="marcadorJugador#{nroJugador}">#{marcador}/m
-  last_response.body.should have_selector('div', 
+  expect(last_response.body).to match(/class="marcadorJugador#{nroJugador}">#{marcador}/m)
+  expect(last_response.body).to have_selector('div', 
                                 :class => "marcadorJugador#{nroJugador}",
                                 :content => marcador)
 end
