@@ -10,3 +10,6 @@ post '/jugar' do
   
   erb :jugar
 end
+
+post '/anotar1' do
+end

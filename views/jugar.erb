@@ -1,13 +1,13 @@
 <h1>Partida</h1>
 <%= @jugador1%> vs <%= @jugador2%>
-<form id="EnJuego" action="/jugar" method="post">
-<div class="tablero">
-	<div class="marcadorJugador1">0</div>
-	<div class="botonJugador1">
-		<input id="btnJugador1" type="submit" value="Anotar">
+<form id="EnJuego" action="/anotar1" method="post">
+	<div class="tablero">
+		<div class="marcadorJugador1">0</div>
+		<div class="marcadorJugador2">0</div>
+		<div class="botonJugador1">
+			<input id="btnJugador1" type="submit" value="Anotar">
+		</div>
 	</div>
-	<div class="marcadorJugador2">0</div>
-</div>
 </form>
 
 
