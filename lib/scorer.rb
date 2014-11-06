@@ -6,17 +6,9 @@ class Scorer
   
   def marcador_de_jugador(nro_jugador)
     if (nro_jugador == 1)
-      if deuce?
-        "Deuce"
-      else
-        @puntaje1.to_s
-      end
+      mostrar_marcador(@puntaje1, @puntaje2)
     else 
-      if deuce?
-        "Deuce"
-      else
-        @puntaje2.to_s
-      end
+      mostrar_marcador(@puntaje2, @puntaje1)
     end
   end
   
@@ -28,8 +20,24 @@ class Scorer
     end
   end
   
-  def deuce?
-    @puntaje1 == 40 && @puntaje2 == 40
+  def mostrar_marcador(puntaje_a_mostrar, puntaje_adversario)
+    if deuce?(puntaje_a_mostrar, puntaje_adversario)
+      "Deuce"
+    else 
+      if advantage?(puntaje_a_mostrar, puntaje_adversario)
+        "Advantage"  
+      else
+        puntaje_a_mostrar.to_s
+      end
+    end
+  end
+  
+  def deuce?(puntaje_a_mostrar, puntaje_adversario)
+    puntaje_a_mostrar == 40 && puntaje_adversario == 40
+  end
+  
+  def advantage?(puntaje_actual, puntaje_adversario)
+    puntaje_actual == 55 && puntaje_adversario == 40
   end
   
   def incrementar_marcador(puntaje_actual)

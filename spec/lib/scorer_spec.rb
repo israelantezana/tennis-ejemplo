@@ -50,4 +50,18 @@ describe Scorer do
   end
   
   
+  it "jugador1 en Advantage" do
+    @scorer.anota_jugador(1)
+    @scorer.anota_jugador(1)
+    @scorer.anota_jugador(1)
+    @scorer.anota_jugador(2)
+    @scorer.anota_jugador(2)
+    @scorer.anota_jugador(2)
+    @scorer.anota_jugador(1)
+    expect(@scorer.marcador_de_jugador(1)).to eq("Advantage")
+    expect(@scorer.marcador_de_jugador(2)).to eq("40")
+  end
+  
+  
+  
 end
