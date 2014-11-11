@@ -57,6 +57,7 @@ describe Scorer do
     @scorer.anota_jugador(2)
     @scorer.anota_jugador(2)
     @scorer.anota_jugador(2)
+    #Hasta aqui estaban en deuce
     @scorer.anota_jugador(1)
     expect(@scorer.marcador_de_jugador(1)).to eq("Advantage")
     expect(@scorer.marcador_de_jugador(2)).to eq("40")
@@ -69,12 +70,24 @@ describe Scorer do
      @scorer.anota_jugador(1)
      @scorer.anota_jugador(1)
      @scorer.anota_jugador(1)
+     #Hasta aqui estaban en deuce
      @scorer.anota_jugador(2)
      expect(@scorer.marcador_de_jugador(1)).to eq("40")
      expect(@scorer.marcador_de_jugador(2)).to eq("Advantage")
    end
-  
-  
-  
-  
+   
+   it "jugador1 vuelve a deuce desde Advantage" do
+       @scorer.anota_jugador(1)
+       @scorer.anota_jugador(1)
+       @scorer.anota_jugador(1)
+       @scorer.anota_jugador(2)
+       @scorer.anota_jugador(2)
+       @scorer.anota_jugador(2)
+       #Hasta aqui estaban en deuce
+       @scorer.anota_jugador(1)
+       @scorer.anota_jugador(2)
+       expect(@scorer.marcador_de_jugador(1)).to eq("Deuce")
+       expect(@scorer.marcador_de_jugador(2)).to eq("Deuce")
+     end
+     
 end

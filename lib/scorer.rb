@@ -16,9 +16,17 @@ class Scorer
   
   def anota_jugador(nro_jugador)
     if (nro_jugador == 1)
-      @puntaje1 += 1
+      if (advantage?(@puntaje2, @puntaje1))
+        @puntaje2 -= 1
+      else
+        @puntaje1 += 1
+      end
     else
-      @puntaje2 += 1
+      if (advantage?(@puntaje1, @puntaje2))
+        @puntaje1 -= 1
+      else
+        @puntaje2 += 1
+      end
     end
   end
 
