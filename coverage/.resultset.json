@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/Israel/Documents/IAR/UCB/SemActual/IngSoftw/pingpong_cucumber_rspec_v1/lib/scorer.rb": [
+      "/Users/Israel/Documents/IAR/UCB/SemActual/IngSoftw/pingpong_cucumber_rspec_rake_v1/lib/scorer.rb": [
         1,
         1,
         9,
@@ -56,6 +56,6 @@
         null
       ]
     },
-    "timestamp": 1415732810
+    "timestamp": 1415883091
   }
 }
