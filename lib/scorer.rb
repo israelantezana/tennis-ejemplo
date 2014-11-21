@@ -1,7 +1,6 @@
 class Scorer
   def initialize
-    @puntajes = { 0 => '0', 1 => '15', 2 => '30', 3 => '40', 
-                  4 => 'Advantage', 5 => 'Ganador'}
+    @puntajes = { 0 => '0', 1 => '15', 2 => '30', 3 => '40'}
     @puntaje1 = 0
     @puntaje2 = 0
   end
@@ -28,6 +27,8 @@ class Scorer
         @puntaje2 += 1
       end
     end
+    puts "puntaje1: #{@puntaje1}"
+    puts "puntaje2: #{@puntaje2}"
   end
 
   def mostrar_marcador(puntaje_a_mostrar, puntaje_adversario)
@@ -37,7 +38,11 @@ class Scorer
       if advantage?(puntaje_a_mostrar, puntaje_adversario)
         "Advantage"  
       else
-        @puntajes[puntaje_a_mostrar]
+        if (puntaje_a_mostrar == 4)||(puntaje_a_mostrar == 5)
+          "Ganador"
+        else
+          @puntajes[puntaje_a_mostrar]
+        end
       end
     end
   end

@@ -90,4 +90,49 @@ describe Scorer do
        expect(@scorer.marcador_de_jugador(2)).to eq("Deuce")
      end
      
+     it "jugador1 gana" do
+       @scorer.anota_jugador(1)
+       @scorer.anota_jugador(1)
+       @scorer.anota_jugador(1)
+       @scorer.anota_jugador(1)
+       expect(@scorer.marcador_de_jugador(1)).to eq("Ganador")
+     end
+     
+     it "jugador2 gana" do
+        @scorer.anota_jugador(2)
+        @scorer.anota_jugador(2)
+        @scorer.anota_jugador(2)
+        @scorer.anota_jugador(2)
+        expect(@scorer.marcador_de_jugador(2)).to eq("Ganador")
+      end
+      
+      it "jugador1 gana desde Advantage" do
+        @scorer.anota_jugador(1)
+        @scorer.anota_jugador(1)
+        @scorer.anota_jugador(1)
+        @scorer.anota_jugador(2)
+        @scorer.anota_jugador(2)
+        @scorer.anota_jugador(2)
+        #Hasta aqui en Deuce
+        @scorer.anota_jugador(1)
+        #Hasta aqui jugador 1 en Advantage
+        @scorer.anota_jugador(1)
+        expect(@scorer.marcador_de_jugador(1)).to eq("Ganador")
+      end
+      
+      it "jugador2 gana desde Advantage" do
+        @scorer.anota_jugador(2)
+        @scorer.anota_jugador(2)
+        @scorer.anota_jugador(2)
+        @scorer.anota_jugador(1)
+        @scorer.anota_jugador(1)
+        @scorer.anota_jugador(1)
+        #Hasta aqui en Deuce
+        @scorer.anota_jugador(2)
+        #Hasta aqui jugador 2 en Advantage
+        @scorer.anota_jugador(2)
+        expect(@scorer.marcador_de_jugador(2)).to eq("Ganador")
+      end
+      
+     
 end
