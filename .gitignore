@@ -2,3 +2,4 @@
 webrat.log
 coverage
 coverage/.last_run.json
+/coverage/*
