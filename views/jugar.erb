@@ -4,7 +4,7 @@
 	<div class="tablero">
 		<div class="marcadorJugador1"><%= @puntaje1 %></div>
 		<div class="botonJugador1">
-			<input id="btnJugador1" type="submit" value="Anotar">
+			<input id="btnJugador1" type="submit" value="Anotar" <%= @disabled %>>
 		</div>
 	</div>
 </form>
@@ -13,7 +13,7 @@
 	<div class="tablero">
 		<div class="marcadorJugador2"><%= @puntaje2 %></div>
 		<div class="botonJugador2">
-			<input id="btnJugador2" type="submit" value="Anotar">
+			<input id="btnJugador2" type="submit" value="Anotar"<%= @disabled %>>
 		</div>
 	</div>
 </form>
