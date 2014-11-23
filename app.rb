@@ -6,6 +6,7 @@ scorer = Scorer.new
 get '/' do
   scorer = Scorer.new
   @disabled = ""
+  @historial = "Jugador 1 Ganó"
   erb :inicio
 end
 
