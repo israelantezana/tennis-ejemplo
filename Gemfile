@@ -11,4 +11,5 @@ gem "rspec"
 gem "simplecov"
 gem "simplecov-console"
 gem "rake"
+gem "launchy"
 
