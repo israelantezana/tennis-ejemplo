@@ -6,5 +6,8 @@
   Jugador2: <input name="jugador2" type="text">
   <input type="submit" value="Jugar">
 
-  <%= @historial %>
+  <br/><br/>
+  <% @@historial.each do |elem| %>
+	<%= elem %> </br>
+  <% end %>
 </form>

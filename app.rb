@@ -2,11 +2,11 @@ require 'sinatra'
 require './lib/scorer'
 
 scorer = Scorer.new
+@@historial = Array.new
 
 get '/' do
   scorer = Scorer.new
   @disabled = ""
-  @historial = "Jugador 1 Ganó"
   erb :inicio
 end
 
@@ -24,6 +24,7 @@ post '/anotar1' do
   @puntaje2 = scorer.marcador_de_jugador(2)
   if (@puntaje1 == "Ganador")
     @disabled = "disabled"
+    @@historial.push("Jugador 1 Ganó")
   end
   erb :jugar
 end
@@ -34,6 +35,7 @@ post '/anotar2' do
   @puntaje2 = scorer.marcador_de_jugador(2)
   if (@puntaje2 == "Ganador")
     @disabled = "disabled"
+    @@historial.push("Jugador 2 Ganó")
   end
   erb :jugar
 end

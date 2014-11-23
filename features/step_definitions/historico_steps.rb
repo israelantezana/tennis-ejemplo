@@ -7,7 +7,7 @@ Given(/^Se termina una partida con ganador 'jugador(\d+)'$/) do |nroJugador|
   click_button("btnJugador#{nroJugador}")
   click_button("btnJugador#{nroJugador}")
   click_button("btnJugador#{nroJugador}")
-  save_and_open_page
+  #save_and_open_page
 end
 
 When(/^inicio nueva partida$/) do
@@ -15,5 +15,5 @@ When(/^inicio nueva partida$/) do
 end
 
 Then(/^deberia ver 'Jugador (\d+) Ganó"$/) do |nroJugador|
-  last_response.body.should =~ /"Jugador #{mensaje} Ganó"/m
+  last_response.body.should include("Jugador #{nroJugador} Ganó")
 end
