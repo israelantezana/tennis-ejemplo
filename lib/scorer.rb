@@ -27,8 +27,6 @@ class Scorer
         @puntaje2 += 1
       end
     end
-    puts "puntaje1: #{@puntaje1}"
-    puts "puntaje2: #{@puntaje2}"
   end
 
   def mostrar_marcador(puntaje_a_mostrar, puntaje_adversario)
