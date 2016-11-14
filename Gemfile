@@ -1,7 +1,7 @@
 # A sample Gemfile
 ruby '2.0.0'
 
-source "https://rubygems.org"
+source "http://rubygems.org"
 
 gem "sinatra"
 gem "cucumber"
@@ -12,4 +12,3 @@ gem "simplecov"
 gem "simplecov-console"
 gem "rake"
 gem "launchy"
-
