@@ -6,7 +6,7 @@ describe Scorer do
     @scorer = Scorer.new
   end
   it "empieza con ambos marcadores en 0" do
-    expect(@scorer.marcador_de_jugador(1)).to eq("-1")
+    expect(@scorer.marcador_de_jugador(1)).to eq("0")
     expect(@scorer.marcador_de_jugador(2)).to eq("0")
   end
 
